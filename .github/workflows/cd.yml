@@ -16,6 +16,12 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v4
 
+      - name: Set up goose
+        run: go install github.com/pressly/goose/v3/cmd/goose@latest
+
+      - name: git diff
+        run: git diff HEAD
+
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
